@@ -1,0 +1,228 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+html{
+  scroll-behavior: smooth;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 2.5rem;
+  background-color: #F7F2ED;
+  position: fixed;
+  top:0;
+  height: 10vh;
+  width: 100%;
+  z-index: 2;
+}
+nav .navItems{
+  display: flex;
+  justify-content: space-between;
+}
+nav .logo{
+  color:#EB7700;
+}
+nav .navItems a{
+  color: #000000;
+  margin:0 1rem;
+  padding:0.5rem 0.75rem;
+  &:hover{
+    color: #EB7700;
+  }
+}
+main .heroContainer{
+  display: flex;
+  align-items: center;
+  padding:0 5rem;
+  padding-top:10vh;
+  background-color: #F7F2ED;
+  height: 100vh;
+}
+main .heroContainer .heroDetailsContainer{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
+}
+.heroDetailsContainer h3{
+  font-size: 4.5rem;
+  color:#3E516A;
+}
+.heroDetailsContainer a{
+  padding:0.75rem 1.5rem;
+  background-color: #EB7700;
+  color: #FFFFFF;
+  width: 10.5rem;
+  font-size: 1.25rem;
+  transition: all 0.2s ease-in-out;
+  &:hover{
+    background-color: #3E516A;
+    border-radius: 0.5rem;
+  }
+}
+main .heroContainer img{
+  width: 50%;
+}
+
+
+
+
+.featuresContainer{
+  padding:2rem 5rem;
+  padding-top:10vh;
+}
+.featuresContainer h2{
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #3E516A;
+}
+.featuresContainer .features{
+  display: flex;
+  overflow-x: scroll;
+  gap:5rem;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
+.features .feature{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  cursor: pointer;
+  &:hover img{
+    scale: 1.1;
+  }
+  &:hover p{
+    color: #EB7700;
+  }
+}
+.feature img{
+  transition: all ease-in-out 0.2s;
+  width: 15rem;
+}
+.feature p{
+  z-index: 1;
+}
+
+
+
+
+
+.featuredProductsContainer{
+  padding:2.5rem 5rem;
+  padding-top:10vh;
+  text-align: center;
+}
+.featuredProductsContainer > h2, .featuredProductsContainer > p{
+  margin: 2rem;
+}
+.featuredProductsContainer h2{
+  color: #3E516A;
+}
+.featuredProductsContainer .thumbnailsContainer{
+  display: grid;
+  gap:2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-row: 2;
+}
+.thumbnailsContainer div{
+  width: 100%;
+  box-shadow: 0 0 0.75rem rgba(62, 81, 106,0.25);
+  overflow: hidden;
+}
+.thumbnailsContainer div img{
+  width: 100%;
+  height: 25rem;
+  transition: all ease 0.3s;
+  z-index: -1;
+  cursor: pointer;
+  &:hover{
+    scale: 1.1275;
+    filter:brightness(1.1);
+  }
+}
+.thumbnailsContainer div h3{
+  color: #EB7700;
+  margin: 0.25rem 0;
+  z-index: 2;
+}
+.thumbnailsContainer div p{
+  margin:0.75rem 0;
+}
+.thumbnailsContainer div a{
+  display: inline-block;
+  padding:0.5rem 0.8rem;
+  background-color: #3E516A;
+  color: #FFFFFF;
+  &:hover{
+    background-color:#EB7700;
+  }
+}
+.thumbnailsContainer div:hover{
+  box-shadow: 0 0 0.75rem rgba(235, 119, 0,0.2);
+  & a{
+    background-color: #EB7700;
+  }
+}
+
+
+
+footer{
+  text-align: center;
+  padding:1rem 2.5rem;
+  background-color: #3E516A;
+}
+footer h2{
+  color: #F7F2ED;
+  margin: 1rem 0;
+}
+footer p{
+  color: #FFFFFF;
+
+}
+footer a{
+  display: block;
+  margin: 1rem 0;
+  color: #FFFFFF;
+}
+@media screen and (max-width:480px){
+  nav{
+    flex-direction: column;
+    padding:0.5rem 2rem;
+  }
+  nav .navItems a{
+    margin:0;
+  }
+  main .heroContainer{
+    height: 100vh;
+    flex-direction: column;
+    padding:20vh 1rem 10vh 1rem;
+    justify-content: space-between;
+  }
+  main .heroContainer .heroDetailsContainer, main .heroContainer img{
+    width: 100%;
+  }
+  .heroDetailsContainer h3{
+    font-size: 2rem;
+  }
+  .featuresContainer{
+    padding:10vh 1rem 1rem;
+  }
+  .featuresContainer .features{
+    gap:0.5rem;
+  }
+  .featuredProductsContainer{
+    padding:10vh 1rem 1rem;
+  }
+  .featuredProductsContainer .thumbnailsContainer{
+    grid-template-columns: 1fr;
+  }
+}
